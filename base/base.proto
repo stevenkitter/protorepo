@@ -1,5 +1,6 @@
 syntax = "proto3";
 package base;
+option go_package = "github.com/stevenkitter/protorepo/base";
 message Resp {
   int32 code = 1;
   string msg = 2;

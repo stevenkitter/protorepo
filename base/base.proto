@@ -1,0 +1,6 @@
+syntax = "proto3";
+package base;
+message Resp {
+  int32 code = 1;
+  string msg = 2;
+}

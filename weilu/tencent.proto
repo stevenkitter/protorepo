@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "base/base.proto";
+package weilu;
+message WXAuthRequest {
+  string name = 1;
+}
+message WXAuthResp {
+  base.Resp resp = 1;
+}
+service WxAuthService {
+  rpc RequestWxAuth (WXAuthRequest) returns (WXAuthResp);
+}

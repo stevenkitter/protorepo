@@ -1,0 +1,21 @@
+syntax = "proto3";
+import "base/base.proto";
+package weilu;
+option go_package = "github.com/stevenkitter/protorepo/weilu";
+
+// WXMessage incoimg body message
+message WXEncryptedMessage {
+  string msg = 1;
+}
+//WXTicketReq save the decrypted message
+message WXTicketReq { 
+  string appID = 1; 
+  string infoType = 2;
+  string componet = 3;
+}
+
+
+service WXService { 
+  rpc DecryptMsg (WXEncryptedMessage) returns (base.Resp);
+  rpc TicketReceived(WXTicketReq) returns (base.Resp);
+}

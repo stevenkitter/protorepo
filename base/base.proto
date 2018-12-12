@@ -2,6 +2,13 @@ syntax = "proto3";
 package base;
 option go_package = "github.com/stevenkitter/protorepo/base";
 message Resp {
-  int32 code = 1;
+  Code code = 1;
   string msg = 2;
+  string data = 3;
+}
+enum Code {
+  Nothing = 0;
+  StatusOK = 200;
+  StatusBadRequest = 400;
+  StatusInternalServerError = 500;
 }
